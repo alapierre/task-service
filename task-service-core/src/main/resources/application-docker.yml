@@ -1,0 +1,23 @@
+eureka:
+    client:
+        service-url:
+            defaultZone: http://eureka:8761/eureka/
+management:
+    endpoint:
+        metrics:
+            enabled: true
+        prometheus:
+            enabled: true
+    endpoints:
+        web:
+            exposure:
+                include: '*'
+    metrics:
+        export:
+            prometheus:
+                enabled: true
+security:
+    oauth2:
+        resource:
+            user-info-uri: http://auth:9001/api/user/logged
+

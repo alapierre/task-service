@@ -1,0 +1,23 @@
+version: '3.7'
+services:
+
+  task-service:
+    image: lapierre/task-service-core:1.0-SNAPSHOT
+    environment:
+      - JAVA_OPTS=-Duser.timezone=Europe/Warsaw
+    ports:
+      - "8080:8080"
+
+  db:
+    image: postgres:12
+    volumes:
+      - pg_data:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_PASSWORD=test123
+      - POSTGRES_USER=postgres
+      - POSTGRES_DB=task
+    ports:
+      - "5432:5432"
+
+volumes:
+  pg_data:

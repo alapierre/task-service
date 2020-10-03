@@ -1,0 +1,10 @@
+spring:
+    flyway:
+        locations: classpath:db/migration/postgres
+    jpa:
+        database-platform: org.hibernate.dialect.PostgreSQL10Dialect
+        properties:
+            hibernate:
+                default_schema: tasks
+                temp:
+                    use_jdbc_metadata_defaults: false

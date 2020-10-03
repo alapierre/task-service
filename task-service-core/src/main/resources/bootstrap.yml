@@ -1,0 +1,9 @@
+spring:
+    application:
+        name: task-service-core
+eureka:
+    instance:
+        metadata-map:
+            metrics.path: \$\{management.context-path:/actuator\}/\$\{endpoints.prometheus.id:prometheus\}
+            health.path: \$\{management.context-path:/actuator\}/\$\{endpoints.health.id:health\}
+            management.context-path: \$\{management.context-path:/actuator\}

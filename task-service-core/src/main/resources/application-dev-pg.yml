@@ -1,0 +1,22 @@
+spring:
+  profiles:
+    include: migratedb,pg
+  datasource:
+    url: jdbc:postgresql://localhost/task
+    username: postgres
+    password: test123
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: none
+    properties:
+      javax:
+        persistence:
+          schema-generation:
+            create-source: metadata
+            scripts:
+              action: update
+              create-target: create.sql
+      hibernate:
+        hbm2ddl:
+          delimeter: ;

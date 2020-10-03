@@ -1,0 +1,16 @@
+version: '3.7'
+services:
+
+  db:
+    image: postgres:12
+    volumes:
+      - pg_data:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_PASSWORD=test123
+      - POSTGRES_USER=postgres
+      - POSTGRES_DB=task
+    ports:
+      - "5432:5432"
+
+volumes:
+  pg_data:
