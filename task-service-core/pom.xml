@@ -126,19 +126,19 @@
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
             </plugin>
-            <plugin>
-                <groupId>se.eris</groupId>
-                <artifactId>notnull-instrumenter-maven-plugin</artifactId>
-                <version>0.6.8</version>
-                <executions>
-                    <execution>
-                        <goals>
-                            <goal>instrument</goal>
-                            <goal>tests-instrument</goal>
-                        </goals>
-                    </execution>
-                </executions>
-            </plugin>
+<!--            <plugin>-->
+<!--                <groupId>se.eris</groupId>-->
+<!--                <artifactId>notnull-instrumenter-maven-plugin</artifactId>-->
+<!--                <version>1.0.0</version>-->
+<!--                <executions>-->
+<!--                    <execution>-->
+<!--                        <goals>-->
+<!--                            <goal>instrument</goal>-->
+<!--                            <goal>tests-instrument</goal>-->
+<!--                        </goals>-->
+<!--                    </execution>-->
+<!--                </executions>-->
+<!--            </plugin>-->
         </plugins>
     </build>
 
@@ -171,19 +171,19 @@
                             </image>
                         </configuration>
                     </plugin>
-                    <plugin>
-                        <groupId>se.eris</groupId>
-                        <artifactId>notnull-instrumenter-maven-plugin</artifactId>
-                        <version>0.6.8</version>
-                        <executions>
-                            <execution>
-                                <goals>
-                                    <goal>instrument</goal>
-                                    <goal>tests-instrument</goal>
-                                </goals>
-                            </execution>
-                        </executions>
-                    </plugin>
+<!--                    <plugin>-->
+<!--                        <groupId>se.eris</groupId>-->
+<!--                        <artifactId>notnull-instrumenter-maven-plugin</artifactId>-->
+<!--                        <version>1.0.0</version>-->
+<!--                        <executions>-->
+<!--                            <execution>-->
+<!--                                <goals>-->
+<!--                                    <goal>instrument</goal>-->
+<!--                                    <goal>tests-instrument</goal>-->
+<!--                                </goals>-->
+<!--                            </execution>-->
+<!--                        </executions>-->
+<!--                    </plugin>-->
                 </plugins>
             </build>
 

@@ -1,7 +1,14 @@
-eureka:
-    client:
-        service-url:
-            defaultZone: http://eureka:8761/eureka/
+spring:
+    profiles:
+        include: migratedb
+    datasource:
+        url: jdbc:postgresql://db/task
+        username: postgres
+        password: test123
+#eureka:
+#    client:
+#        service-url:
+#            defaultZone: http://eureka:8761/eureka/
 management:
     endpoint:
         metrics:
@@ -16,8 +23,8 @@ management:
         export:
             prometheus:
                 enabled: true
-security:
-    oauth2:
-        resource:
-            user-info-uri: http://auth:9001/api/user/logged
+#security:
+#    oauth2:
+#        resource:
+#            user-info-uri: http://auth:9001/api/user/logged
 
