@@ -4,10 +4,10 @@ import io.alapierre.task.service.core.model.base.BaseEntityNoId;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import org.hibernate.annotations.Type;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.Lob;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.Size;
 
@@ -20,11 +20,15 @@ import javax.validation.constraints.Size;
 @Getter
 @Setter
 @NoArgsConstructor
-public class ProcesDefinition extends BaseEntityNoId {
+public class ProcessDefinition extends BaseEntityNoId {
 
     @Id
     @Size(max = 256)
     private String key;
+
+    @Size(max = 128)
+    @NotEmpty
+    private String processType;
 
     @Size(max = 256)
     @NotEmpty
@@ -32,10 +36,10 @@ public class ProcesDefinition extends BaseEntityNoId {
 
     private boolean renewal;
 
-    @Type(type = "jsonb")
+    @Lob
     private String formSchema;
 
-    public ProcesDefinition(String serviceKey) {
-        this.key = serviceKey;
+    public ProcessDefinition(String processKey) {
+        this.key = processKey;
     }
 }

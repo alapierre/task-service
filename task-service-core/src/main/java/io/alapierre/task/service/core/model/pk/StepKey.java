@@ -1,6 +1,6 @@
 package io.alapierre.task.service.core.model.pk;
 
-import io.alapierre.task.service.core.model.ProcesDefinition;
+import io.alapierre.task.service.core.model.ProcessDefinition;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -27,5 +27,5 @@ public class StepKey implements Serializable {
     private String stepKey;
 
     @ManyToOne(optional = false)
-    private ProcesDefinition procesDefinition;
+    private ProcessDefinition processDefinition;
 }

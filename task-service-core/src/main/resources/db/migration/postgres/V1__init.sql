@@ -1,4 +1,4 @@
-create table proces_definition
+create table process_definition
 (
     key                varchar(255) not null,
     behalf_created_by  varchar(255),
@@ -8,9 +8,10 @@ create table proces_definition
     last_modified      timestamp,
     modified_by        varchar(255),
     version            int4         not null,
-    form_schema        jsonb,
+    form_schema        text,
     name               varchar(255),
     renewal            boolean      not null,
+    process_type       varchar[128] not null,
     primary key (key)
 );
 
@@ -24,7 +25,7 @@ create table process_steps_definition
     last_modified          timestamp,
     modified_by            varchar(255),
     version                int4         not null,
-    form_schema            jsonb,
+    form_schema            text,
     lp                     int4         not null,
     step_name              varchar(255),
     process_definition_key varchar(255) not null,
@@ -45,7 +46,7 @@ create table running_process
     owner                  varchar(255),
     renewal                boolean      not null,
     status                 varchar(255),
-    json_values            jsonb,
+    json_values            text,
     process_definition_key varchar(255) not null,
     primary key (id)
 );
@@ -64,16 +65,16 @@ create table running_process_task
     na                 boolean      not null,
     reminder_date      date,
     reminder_time      time,
-    json_values        jsonb,
+    json_values        text,
     process_id         int8         not null,
     primary key (process_id, step_key)
 );
 
 alter table if exists process_steps_definition
-    add constraint FKkosn8wa11s72lw1c8es0ybh3a foreign key (process_definition_key) references proces_definition;
+    add constraint FKkosn8wa11s72lw1c8es0ybh3a foreign key (process_definition_key) references process_definition;
 
 alter table if exists running_process
-    add constraint FKk324dvq7hqr3yik2ou8j408xg foreign key (process_definition_key) references proces_definition;
+    add constraint FKk324dvq7hqr3yik2ou8j408xg foreign key (process_definition_key) references process_definition;
 
 alter table if exists running_process_task
     add constraint FK9j39ibpbj27vds2s787oxsrr foreign key (process_id) references running_process;

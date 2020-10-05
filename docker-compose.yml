@@ -6,6 +6,10 @@ services:
     environment:
       - JAVA_OPTS=-Duser.timezone=Europe/Warsaw
       - SPRING_PROFILES_ACTIVE=docker,pg
+      - SPRING_FLYWAY_LOCATIONS=classpath:db/migration/postgres
+      - SPRING_DATASOURCE_USERNAME=postgres
+      - SPRING_DATASOURCE_PASSWORD=test123
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://db/task
     ports:
       - "8080:8080"
 

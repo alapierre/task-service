@@ -5,14 +5,12 @@ import io.alapierre.task.service.core.model.pk.RunningProcessTaskPK;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import org.hibernate.annotations.Type;
 
-import javax.persistence.Column;
 import javax.persistence.EmbeddedId;
 import javax.persistence.Entity;
+import javax.persistence.Lob;
 import java.time.LocalDate;
 import java.time.LocalTime;
-import java.util.Map;
 
 /**
  * Created 21.09.2020 copyright original authors 2020
@@ -36,7 +34,6 @@ public class RunningProcessTask extends BaseEntityNoId {
 
     private boolean na;
 
-    @Column(name = "json_values")
-    @Type(type = "jsonb")
-    private Map<String, String> values;
+    @Lob
+    private String jsonValues;
 }

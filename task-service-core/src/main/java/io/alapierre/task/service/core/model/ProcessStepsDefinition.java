@@ -4,7 +4,6 @@ import io.alapierre.task.service.core.model.base.BaseEntityNoId;
 import io.alapierre.task.service.core.model.pk.StepKey;
 import lombok.Getter;
 import lombok.Setter;
-import org.hibernate.annotations.Type;
 
 import javax.persistence.*;
 import javax.validation.constraints.Size;
@@ -19,7 +18,7 @@ import javax.validation.constraints.Size;
 @Getter
 @Setter
 @AssociationOverrides({
-    @AssociationOverride(name = "key.procesDefinition", joinColumns = @JoinColumn(name = "process_definition_key"))}
+    @AssociationOverride(name = "key.processDefinition", joinColumns = @JoinColumn(name = "process_definition_key"))}
     )
 public class ProcessStepsDefinition extends BaseEntityNoId {
 
@@ -31,7 +30,7 @@ public class ProcessStepsDefinition extends BaseEntityNoId {
 
     private int lp;
 
-    @Type(type = "jsonb")
+    @Lob
     private String formSchema;
 
     public String getStepKeyString() {

@@ -89,6 +89,12 @@
             <artifactId>flyway-core</artifactId>
         </dependency>
 
+        <dependency>
+            <groupId>org.jetbrains</groupId>
+            <artifactId>annotations</artifactId>
+            <version>18.0.0</version>
+        </dependency>
+
         <!--        <dependency>-->
 <!--            <groupId>org.springframework.security.oauth.boot</groupId>-->
 <!--            <artifactId>spring-security-oauth2-autoconfigure</artifactId>-->
@@ -100,9 +106,9 @@
 <!--        </dependency>-->
 
         <dependency>
-            <groupId>com.vladmihalcea</groupId>
-            <artifactId>hibernate-types-52</artifactId>
-            <version>2.9.13</version>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-devtools</artifactId>
+            <optional>true</optional>
         </dependency>
 
         <dependency>
@@ -126,7 +132,16 @@
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
             </plugin>
-<!--            <plugin>-->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>14</source>
+                    <target>14</target>
+                    <compilerArgs>--enable-preview</compilerArgs>
+                </configuration>
+            </plugin>
+            <!--            <plugin>-->
 <!--                <groupId>se.eris</groupId>-->
 <!--                <artifactId>notnull-instrumenter-maven-plugin</artifactId>-->
 <!--                <version>1.0.0</version>-->

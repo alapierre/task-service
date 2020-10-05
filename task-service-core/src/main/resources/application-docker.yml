@@ -1,10 +1,6 @@
 spring:
     profiles:
         include: migratedb
-    datasource:
-        url: jdbc:postgresql://db/task
-        username: postgres
-        password: test123
 #eureka:
 #    client:
 #        service-url:

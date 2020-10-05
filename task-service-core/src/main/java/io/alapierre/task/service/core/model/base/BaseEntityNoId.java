@@ -1,9 +1,7 @@
 package io.alapierre.task.service.core.model.base;
 
-import com.vladmihalcea.hibernate.type.json.JsonBinaryType;
 import lombok.Getter;
 import lombok.Setter;
-import org.hibernate.annotations.TypeDef;
 import org.springframework.data.annotation.CreatedBy;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.LastModifiedBy;
@@ -22,10 +20,6 @@ import java.time.LocalDateTime;
 @MappedSuperclass
 @Getter
 @Setter
-@TypeDef(
-        name = "jsonb",
-        typeClass = JsonBinaryType.class
-)
 public class BaseEntityNoId {
 
     @Version

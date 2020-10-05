@@ -3,14 +3,12 @@ package io.alapierre.task.service.core.model;
 import io.alapierre.task.service.core.model.base.BaseEntity;
 import lombok.Getter;
 import lombok.Setter;
-import org.hibernate.annotations.Type;
 import org.hibernate.envers.AuditOverride;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
-import java.util.Map;
 
 /**
  * Created 21.09.2020 copyright original authors 2020
@@ -24,7 +22,7 @@ import java.util.Map;
 public class RunningProcess extends BaseEntity {
 
     @ManyToOne(optional = false)
-    private ProcesDefinition processDefinition;
+    private ProcessDefinition processDefinition;
 
     @Size(max = 256)
     private String externalId;
@@ -37,9 +35,8 @@ public class RunningProcess extends BaseEntity {
     @Enumerated(EnumType.STRING)
     private ProcessStatus status;
 
-    @Column(name = "json_values")
-    @Type(type = "jsonb")
-    private Map<String, String> values;
+    @Lob
+    private String jsonValues;
 
     private boolean renewal;
 
