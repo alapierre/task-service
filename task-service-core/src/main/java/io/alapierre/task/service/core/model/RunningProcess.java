@@ -9,6 +9,8 @@ import javax.persistence.*;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
+import java.time.LocalDate;
+import java.time.LocalTime;
 
 /**
  * Created 21.09.2020 copyright original authors 2020
@@ -30,6 +32,18 @@ public class RunningProcess extends BaseEntity {
     @NotEmpty
     @Size(max = 128)
     private String owner;
+
+    @ManyToOne
+    private RunningProcess parent;
+
+    @Size(max = 256)
+    private String description;
+
+    private LocalDate doDate;
+
+    private LocalDate remainderDate;
+
+    private LocalTime remainderTime;
 
     @NotNull
     @Enumerated(EnumType.STRING)

@@ -20,6 +20,13 @@
     <name>Spring Boot Microservice</name>
     <url>http://sidgroup.pl</url>
 
+    <developers>
+        <developer>
+            <id>al@alapierre.io</id>
+            <name>Adrian Lapierre</name>
+        </developer>
+    </developers>
+
     <scm>
         <developerConnection>scm:git:https://github.com/alapierre/task-service.git</developerConnection>
     </scm>

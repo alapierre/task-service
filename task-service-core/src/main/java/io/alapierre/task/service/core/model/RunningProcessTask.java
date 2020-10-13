@@ -23,6 +23,8 @@ import java.time.LocalTime;
 @NoArgsConstructor
 public class RunningProcessTask extends BaseEntityNoId {
 
+    //TODO rename to RunningProcessStep
+
     @EmbeddedId
     private RunningProcessTaskPK key;
 
