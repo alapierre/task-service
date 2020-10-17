@@ -46,12 +46,12 @@ public abstract class CrudService<E, K, R extends JpaRepository<E, K> & JpaSpeci
     }
 
     @Transactional
-    void delete(@NotNull E element) {
+    public void delete(@NotNull E element) {
         repository.delete(element);
     }
 
     @Transactional
-    void delete(@NotNull Collection<E> elements) {
+    public void delete(@NotNull Collection<E> elements) {
         if(elements.isEmpty()){
             return;
         }
