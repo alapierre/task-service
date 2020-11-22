@@ -30,5 +30,7 @@ management:
 server:
     port: 8080
 spring:
+    config:
+        use-legacy-processing: true
     flyway:
         enabled: false

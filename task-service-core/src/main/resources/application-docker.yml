@@ -1,24 +1,11 @@
 spring:
     profiles:
-        include: migratedb
+        include: migratedb, metrisc
 #eureka:
 #    client:
 #        service-url:
 #            defaultZone: http://eureka:8761/eureka/
-management:
-    endpoint:
-        metrics:
-            enabled: true
-        prometheus:
-            enabled: true
-    endpoints:
-        web:
-            exposure:
-                include: '*'
-    metrics:
-        export:
-            prometheus:
-                enabled: true
+
 #security:
 #    oauth2:
 #        resource:

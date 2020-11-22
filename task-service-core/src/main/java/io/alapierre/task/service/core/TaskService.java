@@ -3,14 +3,14 @@ package io.alapierre.task.service.core;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
 import javax.annotation.PostConstruct;
 import java.time.LocalDateTime;
 import java.util.TimeZone;
 
 @SpringBootApplication
-//@EnableJpaRepositories(basePackages = {"pl.ey.task.service.core.repository"})
-//@EnableDiscoveryClient
+@EnableJpaRepositories(basePackages = {"io.alapierre.task.service.core.repository"})
 @Slf4j
 public class TaskService {
 
@@ -20,9 +20,7 @@ public class TaskService {
 
 	@PostConstruct
 	public void printDiag() {
-//Europe/Warsaw
 		log.info("Time Zone is {}, current system time is {}", TimeZone.getDefault(), LocalDateTime.now());
-
 	}
 
 }
