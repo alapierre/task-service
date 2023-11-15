@@ -12,7 +12,7 @@
 
     <properties>
         <maven.deploy.skip>true</maven.deploy.skip>
-        <jetbrains-annotations.version>20.1.0</jetbrains-annotations.version>
+        <jetbrains-annotations.version>24.1.0</jetbrains-annotations.version>
     </properties>
 
     <dependencies>
