@@ -33,7 +33,7 @@
 
     <properties>
         <lombok.version>1.18.12</lombok.version>
-        <modelmapper.version>2.3.9</modelmapper.version>
+        <modelmapper.version>3.2.1</modelmapper.version>
         <java.version>14</java.version>
         <spring-cloud.version>Hoxton.SR9</spring-cloud.version>
         <org.mapstruct.version>1.4.1.Final</org.mapstruct.version>
