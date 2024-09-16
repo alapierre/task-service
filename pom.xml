@@ -36,7 +36,7 @@
         <modelmapper.version>2.3.9</modelmapper.version>
         <java.version>14</java.version>
         <spring-cloud.version>Hoxton.SR9</spring-cloud.version>
-        <org.mapstruct.version>1.4.1.Final</org.mapstruct.version>
+        <org.mapstruct.version>1.6.2</org.mapstruct.version>
     </properties>
 
     <build>
